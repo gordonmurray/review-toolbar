@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Murrion Testing Panel</title>
+        <title>Review Toolbar</title>
         <link href="css/bootstrap.css" rel="stylesheet">
         <script src="js/jquery.js"></script>
         <script src="js/murrion.js" ></script>
@@ -45,7 +45,7 @@
             </div>
         </div><br />
         
-        <iframe src="../index.php" id="testing_content_frame" name="testing_content_frame" scrolling="no">Sorry, Frames need to work for this</iframe>
+        <iframe src="http://www.google.com" id="testing_content_frame" name="testing_content_frame" scrolling="no">Sorry, Frames need to work for this</iframe>
 
     </body>
 
