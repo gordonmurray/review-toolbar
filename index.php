@@ -12,7 +12,7 @@
     <body style="margin-top:5px;">
 
         <!-- Report a Fault Modal -->
-        <form method="post" action="index.php" name="form_deploy" >
+        <form method="post" action="index.php" name="form_report" >
             <input type="hidden" name="report" value="true" />
             <div id="modal_fault" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-header">
@@ -50,13 +50,13 @@
                 <div class="modal-body">
                     <p>
                         <label class="checkbox">
-                            <input name="review_urgent" type="checkbox"> I would like to deploy the changes from the Test site to the Live site
+                            <input name="deploy_consent" type="checkbox" value="1"> I would like to deploy the changes from the Test site to the Live site
                         </label>
 
                         <br />
 
                         <label>Comments</label>
-                        <textarea name="review_content" rows="5" class="span6" placeholder="Any particular instructions to perform upon depoyment?"></textarea>
+                        <textarea name="deploy_comments" rows="5" class="span6" placeholder="Any particular instructions to perform upon depoyment?"></textarea>
 
                     </p>
                 </div>
