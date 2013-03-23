@@ -1,12 +1,13 @@
 <?php
 
-/*
+$message = '';
+
+/**
  * send an email
  */
-
-function send_mail($to, $from, $subject, $content)
+function send_mail($to, $subject, $content)
 {
-    $headers = "From:" . $from;
+    $headers = "From: " . $_SERVER['SERVER_NAME'] . " <noreply@" . $_SERVER['SERVER_NAME'] . ">";
     if (mail($to, $subject, $content, $headers))
     {
         return true;
@@ -17,7 +18,7 @@ function send_mail($to, $from, $subject, $content)
     }
 }
 
-/*
+/**
  * process a 'Send Report'
  */
 if (isset($_POST["submit"]) && $_POST["submit"] == 'Send Report')
@@ -25,17 +26,17 @@ if (isset($_POST["submit"]) && $_POST["submit"] == 'Send Report')
     $review_content = $_POST["review_content"];
     $review_url = $_POST["review_url"];
     $review_urgent = $_POST["review_urgent"];
-    if (send_mail($notification_email, $notification_email, 'Review Report', "$review_content\r\n$review_url\r\n$review_urgent"))
+    if (send_mail($notification_email, $_SERVER['SERVER_NAME'] . ' Review', "$review_content\r\n$review_url\r\n$review_urgent"))
     {
-        echo "Report sent Thank you";
+        $message = "Report sent Thank you";
     }
     else
     {
-        echo "Report email not sent";
+        $message = "Report email not sent";
     }
 }
 
-/*
+/**
  * Process a Deploy
  */
 if (isset($_POST["submit"]) && $_POST["submit"] == 'Deploy')
@@ -44,13 +45,13 @@ if (isset($_POST["submit"]) && $_POST["submit"] == 'Deploy')
     $deploy_comments = $_POST["deploy_comments"];
     if ($deploy_consent == 1)
     {
-        if (send_mail($notification_email, $notification_email, 'Ready to deploy', $deploy_comments))
+        if (send_mail($notification_email, $_SERVER['SERVER_NAME'] . ' ready to deploy', $deploy_comments))
         {
-            echo "Deployment notification sent Thank you";
+            $message = "Deployment notification sent Thank you";
         }
         else
         {
-            echo "Deployment notification email not sent";
+            $message = "Deployment notification email not sent";
         }
     }
 }

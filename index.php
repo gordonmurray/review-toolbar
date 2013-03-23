@@ -71,6 +71,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12 text-right">
+                    <?php echo (isset($message) && $message != '') ? $message : ''; ?>
                     <a href="<?php echo $default_url; ?>" class="btn" target="testing_content_frame"><i class="icon-home"></i></a>
                     <a href="#modal_fault" role="button" class="btn btn-info" data-toggle="modal" onClick="update_current_url();">Report a fault</a>
                     <a href="#" class="btn btn-warning" disabled>Sync Database</a>
