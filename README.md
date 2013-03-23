@@ -12,4 +12,4 @@ The larger goal is to allow clients to submit bugs and feedback directly in to B
 Screenshot
 ==========
 
-![Alt text](/images/screenshot.jpg "Screenshot")
+![Alt text](/img/screenshot.jpg "Screenshot")
